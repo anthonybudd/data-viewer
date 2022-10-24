@@ -38,29 +38,6 @@ export default {
             featureCollection.features.forEach((feature) => bounds.extend(feature.geometry.coordinates));
             this.map.fitBounds(bounds, { padding: 100 });
 
-            // const getImage = (src) => new Promise((resolve, reject) => {
-            //     try {
-            //         const image = new Image();
-            //         image.onload = () => resolve(image);
-            //         image.src = src;
-            //     } catch (err) {
-            //         return reject(err);
-            //     }
-            // });
-
-            // const pin = await getImage('/img/pin.png');
-            // this.map.addImage('tm-map-pin', pin);            
-
-            // this.map.addLayer({
-            //     id: 'points',
-            //     type: 'symbol',
-            //     source: 'events',
-            //     layout: {
-            //         'icon-image': 'tm-map-pin',
-            //         'icon-offset': [0, -25],
-            //     }
-            // });
-
             this.map.addLayer({
                 id: 'earthquakes-heat',
                 type: 'heatmap',
